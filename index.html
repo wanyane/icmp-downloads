@@ -210,10 +210,10 @@
     font-size: 1.1rem;
     color: #12181f;
     border: 1px solid transparent;
+    background: var(--left);
+    transition: background-color 150ms ease, color 150ms ease;
   }
-  .dl-button.win { background: var(--left); }
-  .dl-button.mac,
-  .dl-button.linux { background: var(--right); }
+  .dl-button.is-muted { background: var(--code-bg); color: var(--ink-muted); }
   .dl-button .os-icon { width: 22px; height: 22px; flex-shrink: 0; }
   .dl-button .dl-icon {
     width: 20px;
@@ -497,6 +497,28 @@
     btn.addEventListener("keyup", function (e) {
       if (e.code === "Space" || e.code === "Enter") { setHeld(false); }
     });
+  })();
+
+  (function () {
+    // Mutes the two builds that aren't for the visitor's OS, so the
+    // right one keeps its normal color and reads as the obvious choice.
+    // Deliberately conservative: mobile visitors (iOS/Android) and
+    // anything else unrecognized get no highlight at all, since none of
+    // the three desktop builds are actually right for them.
+    var ua = navigator.userAgent;
+    var os = null;
+    if (/Windows/i.test(ua)) {
+      os = "win";
+    } else if (/Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPad|iPod/i.test(ua)) {
+      os = "mac";
+    } else if (/Linux/i.test(ua) && !/Android/i.test(ua)) {
+      os = "linux";
+    }
+    if (os) {
+      document.querySelectorAll(".dl-button").forEach(function (btn) {
+        if (!btn.classList.contains(os)) { btn.classList.add("is-muted"); }
+      });
+    }
   })();
 
   (function () {
