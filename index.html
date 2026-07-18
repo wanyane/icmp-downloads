@@ -266,6 +266,43 @@
     color: #3aa76d;
   }
 
+  .checksum-details {
+    margin: 10px 0 0;
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+  }
+  .checksum-details summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .checksum-details summary:hover { color: var(--ink); }
+  .checksum-list {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .checksum-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .checksum-os {
+    font-weight: 700;
+    color: var(--ink);
+    min-width: 68px;
+  }
+  .checksum-list code {
+    background: var(--code-bg);
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-size: 0.82em;
+    word-break: break-all;
+    color: var(--ink);
+  }
+
   /* ---------- sections ---------- */
   section {
     padding: 54px 0;
@@ -461,6 +498,14 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
     <span id="dlNoteText">Windows · macOS · Linux — standalone builds, nothing to install.</span>
   </p>
+  <details class="checksum-details">
+    <summary>Verify your download (SHA-256, v0.9.5)</summary>
+    <ul class="checksum-list mono">
+      <li><span class="checksum-os">Windows</span> <code>417d8c5563e1f2c171c58595811ba3c66e77a0f3c677f40e4afb031da5d770a9</code></li>
+      <li><span class="checksum-os">macOS</span> <code>13eb0fda456674a4bd332fc615344e88cbf14fa0afd72fc032c3a87a6bb8cb29</code></li>
+      <li><span class="checksum-os">Linux</span> <code>3812b263a7840fc1f0b8b2b40250b284d4dd3b13cc1bb756dde9f21af88864f0</code></li>
+    </ul>
+  </details>
 
   <section>
     <p class="eyebrow">Getting it running</p>
