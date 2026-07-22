@@ -405,6 +405,22 @@
     color: var(--ink);
   }
 
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 44px;
+  }
+  .feature-item h3 {
+    margin: 0 0 7px;
+    font-size: 1.08rem;
+    letter-spacing: -0.005em;
+  }
+  .feature-item p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 1.02rem;
+  }
+
   footer {
     padding: 40px 0 72px;
     color: var(--ink-muted);
@@ -413,6 +429,7 @@
 
   @media (max-width: 700px) {
     .install-grid { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 620px) {
     .readout { font-size: 0.85rem; padding: 12px 16px; }
@@ -540,6 +557,61 @@
       <li>Press <kbd>Shift</kbd>+<kbd>?</kbd> any time for the full shortcuts help.</li>
     </ol>
     <img class="app-shot" src="assets/screenshot-compare.png" alt="ICMP's Compare page: each side's info card shows the file name and size, resolution and megapixels, modified time, a live RGB histogram, and a FOLDER filmstrip of sibling images to switch between without leaving Compare">
+  </section>
+
+  <section>
+    <p class="eyebrow">Features</p>
+    <h2>Built for comparing, not just viewing</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>Side-by-side & overlay</h3>
+        <p>Zoom and pan stay in sync across both panes. Hold Overlay (or Space) to swap Right on top of Left in place, release to go back.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Select Region</h3>
+        <p>Drag a box on either image to read min, max, mean, and standard deviation per RGB channel for that exact area — mirrored onto the other side at the same time.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Live crosshair & pixel readout</h3>
+        <p>Hover either image for a synced crosshair and the XY position and RGB value under your cursor, updated instantly on both sides.</p>
+      </div>
+      <div class="feature-item">
+        <h3>RGB histogram</h3>
+        <p>A live tonal histogram for each side's image, always current — whether you just switched pictures or stepped to a different video frame.</p>
+      </div>
+      <div class="feature-item">
+        <h3>FOLDER filmstrip</h3>
+        <p>Swap either side's pick to a sibling image — or another frame of the same video — right from the Compare page, with no trip back to the explorer.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Copy Comparison</h3>
+        <p>One click copies the currently-visible region of both images, side by side, straight to your clipboard — ready to paste into a doc or chat.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Compare video frames</h3>
+        <p>Open a video like a folder: browse sampled frames, pick two — from the same clip or different ones — and step frame-by-frame with the arrow keys.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Sync Scrub</h3>
+        <p>Lock both sides' video stepping together by timestamp rather than raw frame number, so two clips at different frame rates stay lined up as you scrub.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Two ways to assign Left/Right</h3>
+        <p>Click order (first pick is Left, second is Right) or Fixed by window (the left explorer is always Left, the right is always Right) — switch anytime.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Built for big folders</h3>
+        <p>Thumbnails and folder listings load lazily in the background, so browsing stays responsive even in folders with thousands of images.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Dark and light themes</h3>
+        <p>Matches your system automatically, or toggle it yourself anytime — every custom-drawn icon and highlight adapts with it.</p>
+      </div>
+      <div class="feature-item">
+        <h3>No installer, no account</h3>
+        <p>Unzip and run on Windows, macOS, or Linux. Nothing to sign into, nothing phoning home.</p>
+      </div>
+    </div>
   </section>
 
   <footer>ICMP — Image Compare</footer>
